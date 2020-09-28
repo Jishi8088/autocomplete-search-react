@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-//import { addShipping } from './actions/cartActions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 class Total extends Component{
-    
     componentWillUnmount() {
          if(this.refs.shipping.checked)
               this.props.substractShipping()
     }
-
     handleChecked = (e)=>{
         if(e.target.checked){
             this.props.addShipping();
@@ -16,9 +13,7 @@ class Total extends Component{
             this.props.substractShipping();
         }
     }
-
     render(){
-  
         return(
             <div className="container">
                 <div className="collection">
@@ -28,7 +23,7 @@ class Total extends Component{
                                 
                             </label>
                         </li>
-                        <li className="collection-item"><b>Total: Rs{this.props.totall} </b></li>
+                        <li className="collection-item"><b>Total: Rs{this.props.total} </b></li>
                     </div>
                     <div className="checkout">
                        
@@ -37,7 +32,6 @@ class Total extends Component{
         )
     }
 }
-
 const mapStateToProps = (state)=>{
     return{
         addedItems: state.addedItems,
